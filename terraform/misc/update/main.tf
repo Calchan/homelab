@@ -11,7 +11,7 @@ module "hosts" {
 }
 
 resource "null_resource" "update" {
-  for_each = "${module.hosts.all_ips}"
+  for_each = module.hosts.all_ips
   triggers = {
     always_run = "${timestamp()}"
   }
